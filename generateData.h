@@ -19,7 +19,6 @@ void generateData (int A[], int n) {
     int i,num;
     srand(time(0));
 	for (i = 0; i < n; i++){
-		//num = (rand() % (n - 1 + 1)) + 1;
 		num = rand();
 		A[i] = num;
 	}
