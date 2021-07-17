@@ -60,12 +60,13 @@ int main() {
 			
 			aveSel += getElapsed(begin,end);
 			
+			/*
 			tempArray(A,B); // merge
 			begin = getTime();
 			mergeSort(B, n, &dMer);
 			end = getTime();
 			
-			aveMer += getElapsed(begin,end);
+			aveMer += getElapsed(begin,end);*/
 			
 			tempArray(A,B); // quick
 			begin = getTime();
