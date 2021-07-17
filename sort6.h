@@ -16,7 +16,7 @@ void set_down(int val[],int counter)
 	chk=val[0];
 	
 	while(2*counter<=chk && flag==1)
-	{
+	{//(*dCounter++);
 		counter2=2*counter;
 		
 		if(counter2+1<=chk && val[counter2+1] > val[counter2])
@@ -39,6 +39,7 @@ void form(int val[])
 	int counter,chk;
 	chk=val[0];
 	for(counter=chk/2;counter>=1;counter--)
+		//(*dCounter)++;
 		set_down(val,counter);
 }
 /****************************************************
@@ -55,12 +56,12 @@ YOU ARE NOT ALLOWED TO MODIFY THE FUNCTION PROTOTYPES
 */
 void sort6(int A[], int n, double *dCounter) {
 	
-	int val[100],chk,counter,end,temp_val;
-		
+	int val[100],chk,counter,end,temp_val, count;
+	//double holder = *dCounter;
 	A[0]=n;
 	form(A);
 	while(A[0] > 1)
-	{
+	{ //(holder)++;
 		end=A[0];
 		temp_val=A[1];
 		A[1]=A[end];
@@ -68,7 +69,7 @@ void sort6(int A[], int n, double *dCounter) {
 		A[0]--;
 		set_down(A,1);
 	}
-
+	//*dCounter = holder;
 }
 	
 	

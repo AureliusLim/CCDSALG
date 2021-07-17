@@ -9,7 +9,7 @@ Link:
 	You may declare additional functions here
 */
 
-void perfrom_merge(int val[],int counter11,int counter12,int counter22,int counter21)
+void perfrom_merge(int A[],int counter11,int counter12,int counter22,int counter21,double *dCounter)
 {
 	int temp_val[50];
 	int c1,c2,c3;
@@ -17,31 +17,32 @@ void perfrom_merge(int val[],int counter11,int counter12,int counter22,int count
 	c2=counter22;
 	c3=0;
 	while(c1<=counter12 && c2<=counter21)
-	{
-		if(val[c1]<val[c2])
-			temp_val[c3++]=val[c1++];
+	{(*dCounter)++;
+		if(A[c1]<A[c2])
+			temp_val[c3++]=A[c1++];
 		else
-			temp_val[c3++]=val[c2++];
+			temp_val[c3++]=A[c2++];
 	}
 	while(c1<=counter12)
-		temp_val[c3++]=val[c1++];
+		temp_val[c3++]=A[c1++];(*dCounter)++;
 		
-	while(c2<=counter21)
-		temp_val[c3++]=val[c2++];
+	while(c2<=counter21)(*dCounter)++;
+		temp_val[c3++]=A[c2++];
 		
-	for(c1=counter11,c2=0;c1<=counter21;c1++,c2++)
-		val[c1]=temp_val[c2];
+	for(c1=counter11,c2=0;c1<=counter21;c1++,c2++)(*dCounter)++;
+		A[c1]=temp_val[c2];
 }
 
-void algo_merge_sort(int val[],int counter1,int counter2)
+void algo_merge_sort(int A[],int low,int high,double *dCounter)
 {
 	int mid;
-	if(counter1<counter2)
+	if(low<high)
 	{
-		mid=(counter1+counter2)/2;
-		algo_merge_sort(val,counter1,mid);
-		algo_merge_sort(val,mid+1,counter2);
-		perfrom_merge(val,counter1,mid,mid+1,counter2);
+		mid=(low+high)/2;
+		algo_merge_sort(A,low,mid,dCounter);
+		algo_merge_sort(A,mid+1,high,dCounter);
+		perfrom_merge(A,low,mid,mid+1,high,dCounter);
+		(*dCounter)++;
 	}
 }
 
@@ -61,6 +62,6 @@ void mergeSort(int A[], int n, double *dCounter) {
 
 	int counter1;
 
-	algo_merge_sort(A,0,n-1);
+	algo_merge_sort(A,0,n-1,dCounter);
 	
 }

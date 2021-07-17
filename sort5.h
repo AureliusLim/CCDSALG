@@ -1,6 +1,9 @@
 /****************************************************
 REFERENCE
 
+/****************************************************
+REFERENCE
+
 Author:
 Link:
 ****************************************************/
@@ -9,7 +12,7 @@ Link:
 /* 
 	You may declare additional functions here
 */
-void quicksort_method(int element_list[], int low, int high)
+void quicksort_method(int A[], int low, int high, double *dCounter)
 {
 	int pivot, value1, value2, temp;
 	
@@ -19,30 +22,32 @@ void quicksort_method(int element_list[], int low, int high)
 		value1 = low;
 		value2 = high;
 		while (value1 < value2)
-		{
-			while (element_list[value1] <= element_list[pivot] && value1 <= high)
-			{
+		{ (*dCounter)++;
+			while (A[value1] <= A[pivot] && value1 <= high)
+			{ (*dCounter)++;
 				value1++;
 			}
 			
-			while (element_list[value2] > element_list[pivot] && value2 >= low)
-			{
+			while (A[value2] > A[pivot] && value2 >= low)
+			{(*dCounter)++;
 				value2--;
 			}
 			
 			if (value1 < value2)
-			{
-				temp = element_list[value1];
-				element_list[value1] = element_list[value2];
-				element_list[value2] = temp;
+			{(*dCounter)++;
+				temp = A[value1];
+				A[value1] = A[value2];
+				A[value2] = temp;
 			}
 		}
 	
-		temp = element_list[value2];
-		element_list[value2] = element_list[pivot];
-		element_list[pivot] = temp;
-		quicksort_method(element_list, low, value2 - 1);
-		quicksort_method(element_list, value2 + 1, high);
+		temp = A[value2];
+		A[value2] = A[pivot];
+		A[pivot] = temp;
+		quicksort_method(A, low, value2 - 1,dCounter);
+		quicksort_method(A, value2 + 1, high,dCounter);
+		
+		(*dCounter)++;
 	}
 }
 
@@ -60,9 +65,8 @@ YOU ARE NOT ALLOWED TO MODIFY THE FUNCTION PROTOTYPES
 */
 void sort5(int A[], int n, double *dCounter) {
 	
-	int element_list[50],count, counter;
-	
-	quicksort_method(A, 0, n - 1);
+	quicksort_method(A, 0, n - 1,dCounter);
 }
+
 
 
