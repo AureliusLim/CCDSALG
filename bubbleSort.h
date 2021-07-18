@@ -23,13 +23,15 @@ YOU ARE NOT ALLOWED TO MODIFY THE FUNCTION PROTOTYPES
 	@param int n			size of the array to be sorted
 	@param double *dCounter	counter variable for critical parts of the code
 */
+
 void bubbleSort(int A[], int n, double *dCounter) {
 	int counter1, swap_var,counter;
 	
 	for (counter = 0 ; counter <  n - 1; counter++)
-	{(*dCounter)++;
+	{
+		(*dCounter)++;
 		for (counter1 = 0 ; counter1 < n - counter - 1; counter1++)
-		{(*dCounter)++;
+		{
 			if (A[counter1] > A[counter1+1]) /* For decreasing order use < */
 			{
 				swap_var = A[counter1];
@@ -37,7 +39,6 @@ void bubbleSort(int A[], int n, double *dCounter) {
 				A[counter1+1] = swap_var;
 			}
 		}
-	}
-	
-	
+	}	
+	(*dCounter)++;
 }

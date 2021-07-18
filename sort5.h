@@ -22,19 +22,15 @@ void quicksort_method(int A[], int low, int high, double *dCounter)
 		value1 = low;
 		value2 = high;
 		while (value1 < value2)
-		{ (*dCounter)++;
+		{ 
 			while (A[value1] <= A[pivot] && value1 <= high)
-			{ (*dCounter)++;
 				value1++;
-			}
-			
+		
 			while (A[value2] > A[pivot] && value2 >= low)
-			{(*dCounter)++;
 				value2--;
-			}
 			
 			if (value1 < value2)
-			{(*dCounter)++;
+			{
 				temp = A[value1];
 				A[value1] = A[value2];
 				A[value2] = temp;
@@ -46,9 +42,9 @@ void quicksort_method(int A[], int low, int high, double *dCounter)
 		A[pivot] = temp;
 		quicksort_method(A, low, value2 - 1,dCounter);
 		quicksort_method(A, value2 + 1, high,dCounter);
-		
-		(*dCounter)++;
 	}
+	
+	(*dCounter)++;
 }
 
 /****************************************************
@@ -63,10 +59,11 @@ YOU ARE NOT ALLOWED TO MODIFY THE FUNCTION PROTOTYPES
 	@param int n			size of the array to be sorted
 	@param double *dCounter	counter variable for critical parts of the code
 */
-void sort5(int A[], int n, double *dCounter) {
+void quickSort(int A[], int n, double *dCounter) {
 	
 	quicksort_method(A, 0, n - 1,dCounter);
 }
+
 
 
 

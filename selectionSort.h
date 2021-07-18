@@ -23,15 +23,18 @@ YOU ARE NOT ALLOWED TO MODIFY THE FUNCTION PROTOTYPES
 	@param int n			size of the array to be sorted
 	@param double *dCounter	counter variable for critical parts of the code
 */
+
 void selectionSort(int A[], int n, double *dCounter) {
 
 	int total_count,counter1,counter2,minimum,temp_value;
 	
 	for(counter1=0;counter1<n-1;counter1++)
-	{ (*dCounter)++;
+	{ 
+		(*dCounter)++;
 		minimum=counter1;
 		for(counter2=counter1+1;counter2<n;counter2++)
-		{(*dCounter)++;
+		{
+			
 			if(A[minimum]>A[counter2])
 			minimum=counter2;
 		}
@@ -43,5 +46,6 @@ void selectionSort(int A[], int n, double *dCounter) {
 			A[minimum]=temp_value;
 		}
 	}
+	(*dCounter)++;
 
 }
