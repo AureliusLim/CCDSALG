@@ -36,9 +36,11 @@ int main()
 		double dBubb = 0, dIns = 0,dSel = 0, dMer = 0, dQ = 0, dH=0;
 		double aveBubb = 0, aveIns = 0, aveSel = 0, aveMer = 0, aveQ = 0, aveH = 0;
 		
-		int A[n];
-		int B[n];
-		printf("\n\n n = %d", n);
+//		int A[n];
+//		int B[n];
+		int * A= malloc(n * sizeof(int));
+		int * B = malloc(n * sizeof(int));
+		printf("\n\n--  N:  %d  -- ", n);
 		generateData(A,n);						//generate random array of numbers
 	
 		for(runs = 0; runs < 10; runs++)		//deviation/average time checker
@@ -94,26 +96,33 @@ int main()
 			aveH += getElapsed(begin,end);
 
 		}
-
-		printf("\nAve Bubble Sort Machine Execution Time: %lf", aveBubb / 10);
+		printf("\n\nBubble Sort:");
+		printf("\nAverage MET: %lf milliseconds", (aveBubb / 10) * 1000);
+		printf("\nAverage counter value: %lf", dBubb/10);
 		
-		printf("\nAve Insertion Sort Machine Execution Time: %lf", aveIns / 10);
-	
-		printf("\nAve Selection Sort Machine Execution Time: %lf", aveSel / 10);
-		printf("\nAve Merge Sort Machine Execution Time: %lf", aveMer / 10);
-		printf("\nAve Quick Sort Machine Execution Time: %lf", aveQ / 10);
-		printf("\nAve Heap Sort Machine Execution Time: %lf", aveH / 10);
+		printf("\n\nInsertion Sort:");
+		printf("\nAverage MET: %lf milliseconds", (aveIns / 10) * 1000);
+		printf("\nAverage counter value: %lf", dIns /10);
 		
+		printf("\n\nSelection Sort:");
+		printf("\nAverage MET: %lf milliseconds", (aveSel / 10) * 1000);
+		printf("\nAverage counter value: %lf", dSel/10);
 		
-		printf("\n\nAve dCounter of Bubble Sort: %lf", dBubb/10);
-		printf("\nAve dCounter of Insertion Sort: %lf", dIns / 10);
-		printf("\nAve dCounter of Selection Sort: %lf", dSel / 10);
-		printf("\nAve dCounter of Merge Sort: %lf", dMer/ 10);
-		printf("\nAve dCounter of Quick Sort: %lf", dQ / 10);
-		printf("\nAve dCounter of Heap Sort: %lf", dH / 10);
+		printf("\n\nMerge Sort:");
+		printf("\nAverage MET: %lf milliseconds", (aveMer / 10) * 1000);
+		printf("\nAverage counter value: %lf", dMer/10);
+		
+		printf("\n\nQuick Sort:");
+		printf("\nAverage MET: %lf milliseconds", (aveQ / 10) * 1000);
+		printf("\nAverage counter value: %lf", dQ /10);
+		
+		printf("\n\nHeap Sort:");
+		printf("\nAverage MET: %lf milliseconds", (aveH / 10) * 1000);
+		printf("\nAverage counter value: %lf", dH/10);
 
 		n*=2;
-		
+		free(A);
+		free(B);
 	}
 	
 	return 0;

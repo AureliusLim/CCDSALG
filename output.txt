@@ -1,0 +1,78 @@
+
+
+ n = 1024
+Ave Bubble Sort Machine Execution Time: 0.001563
+Ave Insertion Sort Machine Execution Time: 0.001563
+Ave Selection Sort Machine Execution Time: 0.000000
+Ave Merge Sort Machine Execution Time: 0.000000
+Ave Quick Sort Machine Execution Time: 0.000000
+Ave Heap Sort Machine Execution Time: 0.000000
+
+Ave dCounter of Bubble Sort: 1024.000000
+Ave dCounter of Insertion Sort: 1024.000000
+Ave dCounter of Selection Sort: 1024.000000
+Ave dCounter of Merge Sort: 2047.000000
+Ave dCounter of Quick Sort: 1373.000000
+Ave dCounter of Heap Sort: 1024.000000
+
+ n = 2048
+Ave Bubble Sort Machine Execution Time: 0.007813
+Ave Insertion Sort Machine Execution Time: 0.001563
+Ave Selection Sort Machine Execution Time: 0.003125
+Ave Merge Sort Machine Execution Time: 0.000000
+Ave Quick Sort Machine Execution Time: 0.000000
+Ave Heap Sort Machine Execution Time: 0.000000
+
+Ave dCounter of Bubble Sort: 2048.000000
+Ave dCounter of Insertion Sort: 2048.000000
+Ave dCounter of Selection Sort: 2048.000000
+Ave dCounter of Merge Sort: 4095.000000
+Ave dCounter of Quick Sort: 2723.000000
+Ave dCounter of Heap Sort: 2048.000000
+
+ n = 4096
+Ave Bubble Sort Machine Execution Time: 0.029687
+Ave Insertion Sort Machine Execution Time: 0.007813
+Ave Selection Sort Machine Execution Time: 0.009375
+Ave Merge Sort Machine Execution Time: 0.000000
+Ave Quick Sort Machine Execution Time: 0.000000
+Ave Heap Sort Machine Execution Time: 0.001563
+
+Ave dCounter of Bubble Sort: 4096.000000
+Ave dCounter of Insertion Sort: 4096.000000
+Ave dCounter of Selection Sort: 4096.000000
+Ave dCounter of Merge Sort: 8191.000000
+Ave dCounter of Quick Sort: 5507.000000
+Ave dCounter of Heap Sort: 4096.000000
+
+ n = 8192
+Ave Bubble Sort Machine Execution Time: 0.114063
+Ave Insertion Sort Machine Execution Time: 0.031250
+Ave Selection Sort Machine Execution Time: 0.046875
+Ave Merge Sort Machine Execution Time: 0.001563
+Ave Quick Sort Machine Execution Time: 0.001563
+Ave Heap Sort Machine Execution Time: 0.000000
+
+Ave dCounter of Bubble Sort: 8192.000000
+Ave dCounter of Insertion Sort: 8192.000000
+Ave dCounter of Selection Sort: 8192.000000
+Ave dCounter of Merge Sort: 16383.000000
+Ave dCounter of Quick Sort: 10919.000000
+Ave dCounter of Heap Sort: 8192.000000
+
+ n = 16384
+Ave Bubble Sort Machine Execution Time: 0.539063
+Ave Insertion Sort Machine Execution Time: 0.125000
+Ave Selection Sort Machine Execution Time: 0.184375
+Ave Merge Sort Machine Execution Time: 0.003125
+Ave Quick Sort Machine Execution Time: 0.003125
+Ave Heap Sort Machine Execution Time: 0.000000
+
+Ave dCounter of Bubble Sort: 16384.000000
+Ave dCounter of Insertion Sort: 16384.000000
+Ave dCounter of Selection Sort: 16384.000000
+Ave dCounter of Merge Sort: 32767.000000
+Ave dCounter of Quick Sort: 21987.000000
+Ave dCounter of Heap Sort: 16384.000000
+
+ n = 32768
