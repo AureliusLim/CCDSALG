@@ -24,10 +24,18 @@ void quicksort_method(int A[], int low, int high, double *dCounter)
 		while (value1 < value2)
 		{ 
 			while (A[value1] <= A[pivot] && value1 <= high)
+			{
+				(*dCounter)++;
 				value1++;
-		
+			}
+			(*dCounter)++;
+			
 			while (A[value2] > A[pivot] && value2 >= low)
+			{
+				(*dCounter)++;
 				value2--;
+			}
+			(*dCounter)++;
 			
 			if (value1 < value2)
 			{
@@ -59,11 +67,10 @@ YOU ARE NOT ALLOWED TO MODIFY THE FUNCTION PROTOTYPES
 	@param int n			size of the array to be sorted
 	@param double *dCounter	counter variable for critical parts of the code
 */
-void quickSort(int A[], int n, double *dCounter) {
+//quick sort
+void sort5(int A[], int n, double *dCounter) {
 	
 	quicksort_method(A, 0, n - 1,dCounter);
 }
-
-
 
 

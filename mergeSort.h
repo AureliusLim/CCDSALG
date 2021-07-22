@@ -9,7 +9,7 @@ Link:
 	You may declare additional functions here
 */
 
-void merge(int A[], int left, int mid, int right)
+void merge(int A[], int left, int mid, int right, double *dCounter)
 {
 	int i, j, k;
 	int n1 = mid - left + 1;
@@ -20,9 +20,17 @@ void merge(int A[], int left, int mid, int right)
 
 	/* Copy data to temp arrays L[] and R[] */
 	for (i = 0; i < n1; i++)
-		L[i] = A[left + i];
+  {
+    L[i] = A[left + i];
+    (*dCounter)++;
+  }
+		
 	for (j = 0; j < n2; j++)
-		R[j] = A[mid + 1 + j];
+  {
+  	R[j] = A[mid + 1 + j];
+    (*dCounter)++;
+  }
+	
 
 	/* Merge the temp arrays back into arr[l..r]*/
 	i = 0; // Initial index of first subarray
@@ -38,7 +46,9 @@ void merge(int A[], int left, int mid, int right)
 			j++;
 		}
 		k++;
+		(*dCounter)++;
 	}
+  (*dCounter)++;
 
 	/* Copy the remaining elements of L[], if there
 	are any */
@@ -46,7 +56,9 @@ void merge(int A[], int left, int mid, int right)
 		A[k] = L[i];
 		i++;
 		k++;
+		(*dCounter)++;
 	}
+  (*dCounter)++;
 
 	/* Copy the remaining elements of R[], if there
 	are any */
@@ -54,12 +66,15 @@ void merge(int A[], int left, int mid, int right)
 		A[k] = R[j];
 		j++;
 		k++;
+		(*dCounter)++;
 	}
+  (*dCounter)++;
 }
 
 void mergeSortAlgo(int A[], int left, int right,double *dCounter)
 {
-	if (left < right) {
+	if (left < right) 
+  {
 		// Same as (l+r)/2, but avoids overflow for
 		// large l and h
 		int mid = left + (right - left) / 2;
@@ -68,7 +83,7 @@ void mergeSortAlgo(int A[], int left, int right,double *dCounter)
 		mergeSortAlgo(A, left, mid,dCounter);
 		mergeSortAlgo(A, mid + 1, right,dCounter);
 
-		merge(A, left, mid, right);
+		merge(A, left, mid, right,dCounter);
 	}
 	(*dCounter)++;
 }

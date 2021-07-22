@@ -14,7 +14,7 @@ Members:
 #include "sort6.h"
 #include "generateData.h"
 #include "timer.h"
-
+#include <stdlib.h>
 void tempArray(int A[], int B[], int n){		////setup temporary array copy
 	int i;
 	for (i = 0; i < n; i++){
@@ -36,8 +36,6 @@ int main()
 		double dBubb = 0, dIns = 0,dSel = 0, dMer = 0, dQ = 0, dH=0;
 		double aveBubb = 0, aveIns = 0, aveSel = 0, aveMer = 0, aveQ = 0, aveH = 0;
 		
-//		int A[n];
-//		int B[n];
 		int * A= malloc(n * sizeof(int));
 		int * B = malloc(n * sizeof(int));
 		printf("\n\n--  N:  %d  -- ", n);
@@ -83,7 +81,7 @@ int main()
 			tempArray(A,B,n); 
 			
 			begin = getTime();
-			quickSort(B, n, &dQ); 
+			sort5(B, n, &dQ); 
 			end = getTime();
 			aveQ += getElapsed(begin,end);
 			
@@ -91,11 +89,12 @@ int main()
 			tempArray(A,B,n); 
 			
 			begin = getTime();
-			heapSort(B, n, &dH);
+			sort6(B, n, &dH);
 			end = getTime();		
 			aveH += getElapsed(begin,end);
 
 		}
+	
 		printf("\n\nBubble Sort:");
 		printf("\nAverage MET: %lf milliseconds", (aveBubb / 10) * 1000);
 		printf("\nAverage counter value: %lf", dBubb/10);

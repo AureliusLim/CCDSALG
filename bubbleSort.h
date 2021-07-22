@@ -32,6 +32,7 @@ void bubbleSort(int A[], int n, double *dCounter) {
 		(*dCounter)++;
 		for (counter1 = 0 ; counter1 < n - counter - 1; counter1++)
 		{
+      (*dCounter)++;
 			if (A[counter1] > A[counter1+1]) /* For decreasing order use < */
 			{
 				swap_var = A[counter1];

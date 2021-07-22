@@ -34,13 +34,14 @@ void selectionSort(int A[], int n, double *dCounter) {
 		minimum=counter1;
 		for(counter2=counter1+1;counter2<n;counter2++)
 		{
-			
+			(*dCounter)++;
 			if(A[minimum]>A[counter2])
 			minimum=counter2;
 		}
 		
 		if(minimum!=counter1)
 		{
+      
 			temp_value=A[counter1];
 			A[counter1]=A[minimum];
 			A[minimum]=temp_value;
