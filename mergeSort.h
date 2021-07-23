@@ -24,13 +24,13 @@ void merge(int A[], int left, int mid, int right, double *dCounter)
     L[i] = A[left + i];
     (*dCounter)++;
   }
-		
+	(*dCounter)++;
 	for (j = 0; j < n2; j++)
   {
   	R[j] = A[mid + 1 + j];
     (*dCounter)++;
   }
-	
+	(*dCounter)++;
 
 	/* Merge the temp arrays back into arr[l..r]*/
 	i = 0; // Initial index of first subarray

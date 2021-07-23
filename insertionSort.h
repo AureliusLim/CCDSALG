@@ -41,7 +41,8 @@ void insertionSort(int A[], int n, double *dCounter) {
 			A[counter2+1]=A[counter2];
 			counter2=counter2-1;
 		}
+    (*dCounter)++;
 		A[counter2+1]=temp_val;
 	}
-	
+	(*dCounter)++;
 }

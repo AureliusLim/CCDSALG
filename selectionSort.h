@@ -38,7 +38,7 @@ void selectionSort(int A[], int n, double *dCounter) {
 			if(A[minimum]>A[counter2])
 			minimum=counter2;
 		}
-		
+		(*dCounter)++;
 		if(minimum!=counter1)
 		{
       

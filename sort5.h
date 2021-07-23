@@ -22,7 +22,7 @@ void quicksort_method(int A[], int low, int high, double *dCounter)
 		value1 = low;
 		value2 = high;
 		while (value1 < value2)
-		{ 
+		{
 			while (A[value1] <= A[pivot] && value1 <= high)
 			{
 				(*dCounter)++;
@@ -44,7 +44,6 @@ void quicksort_method(int A[], int low, int high, double *dCounter)
 				A[value2] = temp;
 			}
 		}
-	
 		temp = A[value2];
 		A[value2] = A[pivot];
 		A[pivot] = temp;

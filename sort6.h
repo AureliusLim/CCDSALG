@@ -16,7 +16,6 @@ void heapify(int arr[], int n, int i, double *dCounter)
  
     // If largest is not root
     if (largest != i) {
-    	(*dCounter)++;
     	int temp = arr[i];
     	arr[i] = arr[largest];
     	arr[largest] = temp;
@@ -31,14 +30,15 @@ void heapify(int arr[], int n, int i, double *dCounter)
 void sort6(int arr[], int n, double *dCounter)
 {
     // Build heap (rearrange array)
-    for (int i = n / 2 - 1; i >= 0; i--)
+    int i;
+    for (i = n / 2 - 1; i >= 0; i--)
     {
     	heapify(arr, n, i, dCounter);
     	(*dCounter)++;
     }
  	(*dCounter)++;
     // One by one extract an element from heap
-    for (int i = n - 1; i > 0; i--) {
+    for (i = n - 1; i > 0; i--) {
         // Move current root to end
  		int temp = arr[i];
  		arr[i] = arr[0];

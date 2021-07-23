@@ -40,6 +40,7 @@ void bubbleSort(int A[], int n, double *dCounter) {
 				A[counter1+1] = swap_var;
 			}
 		}
+    (*dCounter)++;
 	}	
 	(*dCounter)++;
 }

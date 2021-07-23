@@ -14,7 +14,7 @@ Members:
 #include "sort6.h"
 #include "generateData.h"
 #include "timer.h"
-#include <stdlib.h>
+
 void tempArray(int A[], int B[], int n){		////setup temporary array copy
 	int i;
 	for (i = 0; i < n; i++){
@@ -43,23 +43,22 @@ int main()
 	
 		for(runs = 0; runs < 10; runs++)		//deviation/average time checker
 		{
-			
+			//bubble
 			tempArray(A,B,n);					//setup temporary array copy
-			
-			 // bubble
+		
 			begin = getTime(); 
 			bubbleSort(B,n,&dBubb);
 			end = getTime();
 			aveBubb +=getElapsed(begin,end);
 	
+			//insertion
 			tempArray(A,B,n);
 			
-			//insertion
 			begin = getTime();
 			insertionSort(B, n, &dIns);
 			end = getTime();
 			aveIns += getElapsed(begin,end);
-			
+		
 			
 			// selection
 			tempArray(A,B,n); 
@@ -68,7 +67,7 @@ int main()
 			selectionSort(B, n, &dSel);
 			end = getTime();
 			aveSel += getElapsed(begin,end);
-			
+	
 			// merge
 			tempArray(A,B,n); 
 			
@@ -76,7 +75,7 @@ int main()
 			mergeSort(B, n, &dMer);
 			end = getTime();
 			aveMer += getElapsed(begin,end);
-			
+	
 			// quick
 			tempArray(A,B,n); 
 			
@@ -84,7 +83,7 @@ int main()
 			sort5(B, n, &dQ); 
 			end = getTime();
 			aveQ += getElapsed(begin,end);
-			
+	
 			//heap
 			tempArray(A,B,n); 
 			
@@ -92,9 +91,10 @@ int main()
 			sort6(B, n, &dH);
 			end = getTime();		
 			aveH += getElapsed(begin,end);
-
-		}
 	
+		}
+		
+		
 		printf("\n\nBubble Sort:");
 		printf("\nAverage MET: %lf milliseconds", (aveBubb / 10) * 1000);
 		printf("\nAverage counter value: %lf", dBubb/10);
